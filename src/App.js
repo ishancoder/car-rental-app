@@ -3,6 +3,7 @@ import './App.sass';
 import CarListings from './components/CarListings/CarListings';
 import FilterPane from './components/FilterPane/FilterPane';
 import moment from 'moment';
+import Header from './components/Header/Header';
 
 const filterValue = {
   location: "",
@@ -55,14 +56,13 @@ class App extends Component {
         filters={this.state.filters} 
         onClose={this.toggleFilterPane}
         onClearAll={this.clearFilters}/>
-      <header className={`${(this.state.isLandingPageVisited) ? "collapse" : "full-screen"} backgrounded controls`}>
-        <h1 className="title">Rent Your <span role="img" aria-label="car">🚗</span></h1>
-        <div className="input-wrapper">
-          <input type="text" name="location" onChange={this.handleFilterChange} placeholder="Location" value={this.state.filters.location}/>
-          <input type="date" name="startDate" onChange={this.handleDateChange} defaultValue={this.state.startDate.format("YYYY-MM-DD")}/>
-        </div>
-        <button onClick={this.handleSubmit}>SUBMIT</button>
-      </header>
+      <Header 
+        startDate={this.state.startDate}
+        location={this.state.location}
+        fullScreen={!this.state.isLandingPageVisited}
+        handleDateChange={this.handleDateChange}
+        handleFilterChange={this.handleFilterChange}
+        handleSubmit={this.handleSubmit}/>
       <CarListings
         startDate={this.state.startDate}
         location={this.state.location}

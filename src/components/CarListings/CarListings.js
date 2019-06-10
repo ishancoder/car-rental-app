@@ -111,6 +111,7 @@ class CarListings extends Component {
                             onSelect={this.handleSelect} />;
                     })
                 }
+                {!carPage.length ? <h3 className="no-result">No Results were found</h3> : ""}
             </div>
         </section>
     }

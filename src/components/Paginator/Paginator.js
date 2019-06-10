@@ -2,8 +2,10 @@ import React from "react";
 import "./Paginator.sass";
 
 function Paginator(props) {
-    const {pageNumber, pageSize, totalElements} = props;
-    const totalPages = Math.ceil(totalElements / pageSize);
+    let {pageNumber, pageSize, totalElements} = props;
+    // We'll be showing at least one page.
+    const totalPages = Math.max(Math.ceil(totalElements / pageSize), 1);
+    
     return <div className="paginator backgrounded">
         <div className="search-wrapper">
             <input 

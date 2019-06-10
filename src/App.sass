@@ -2,27 +2,6 @@
   height: 100vh
   overflow: hidden
 
-  header.controls
-    position: relative
-    height: 10%
-    transition: all 300ms ease-in-out
-
-    .input-wrapper
-      position: absolute
-      width: 100%
-      top: calc(50% - 25px)
-      display: flex
-      justify-content: center
-      padding: 5px
-
-      input
-        font-size: 1.2rem
-        padding: 10px
-        border-radius: 99em
-        width: 45%
-        max-width: 300px
-        margin: 0 5px
-
   .filter-btn
     position: fixed
     background: orange
@@ -32,28 +11,3 @@
     height: 60px
     font-size: 2rem
     box-shadow: 0 5px 10px -5px black
-  
-  header.full-screen
-    height: 100% !important
-
-    .title
-      font-size: 3rem
-      top: calc(50% - 120px)
-      width: 100%
-      text-align: center
-      position: absolute
-
-    button
-      position: absolute
-      top: calc(50% + 45px)
-      left: calc(50% - 65px)
-      width: 130px
-      font-size: 1.2rem
-      padding: 8px 10px
-
-  header.collapse
-    button
-      display: none
-      
-    .title
-      display: none
